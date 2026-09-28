@@ -1,0 +1,43 @@
+/* Themes: toggled by putting one of these classes on <body> */
+.light-theme { --bg: #ffffff; --fg: #000000; --line: #cccccc; --muted: #666666; }
+.dark-theme  { --bg: #000000; --fg: #ffffff; --line: #444444; --muted: #aaaaaa; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+
+.app { max-width: 520px; margin: 0 auto; padding: 40px 20px; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+h1 { margin: 0; font-size: 1.6rem; }
+
+button, input {
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+button { cursor: pointer; }
+button:hover { background: var(--fg); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+.add { display: flex; gap: 8px; margin: 24px 0 12px; }
+.add input { flex: 1; min-width: 0; }
+
+.error { color: #d33; margin: 8px 0; }
+.empty { color: var(--muted); }
+
+.list { list-style: none; padding: 0; margin: 0; }
+.list li {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--line);
+}
+.title { cursor: pointer; flex: 1; word-break: break-word; }
+.title.done { text-decoration: line-through; color: var(--muted); }
+.del { padding: 4px 10px; font-size: 0.9rem; }
